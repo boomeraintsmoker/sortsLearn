@@ -1,7 +1,7 @@
 #include <iostream>
 #include "sorts.h"
 #include "test_sorts.h"
-#include "often_used_functions.h"
+#include "arraywork.h"
 
 void test_BubbleSort() {
     std::cout << "---- Bubble sort ----" << std::endl;
