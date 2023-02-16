@@ -1,3 +1,5 @@
+#include <iostream>
+#include <cstring>
 #include "sorts.h"
 
 void bubbleSort(int* ar, int size) {
@@ -61,4 +63,42 @@ void countingSort(int* ar, int size, int* counter, int maxElement) {
             ar[pos++] = i;
         }
     }
+}
+
+void merge(int* lAr, int lArSize, int* rAr, int rArSize, int* sAr) {
+    int i = 0;
+    int j = 0;
+    while(i < lArSize && j < rArSize) {
+        if(lAr[i] < rAr[j]) {
+            sAr[i + j] = lAr[i];
+            i++;
+        }
+        if(rAr[j] < lAr[i]) {
+            sAr[j + i] = rAr[j];
+            j++;
+        }
+    }
+    while(i < lArSize) {
+        sAr[i + j] = lAr[i];
+        i++;
+    }
+    while(j < rArSize) {
+        sAr[j + i] = rAr[j];
+        j++;
+    }
+}
+
+int mergeSort(int* ar, int size) {
+    if(size <= 1) {
+        return -1;
+    }
+    int lSize = size/2;
+    int rSize = size - lSize;
+    mergeSort(ar, lSize);
+    mergeSort(ar + lSize, rSize);
+    int* sAr = new int[size];
+    merge(ar, lSize, ar + lSize, rSize, sAr);
+    std::memcpy(ar, sAr, sizeof(int) * size);
+    delete [] sAr;
+    return -1;
 }

@@ -5,5 +5,6 @@ void selectionSort(int*, int);
 void insertionSort(int*, int);
 void countingSort(int*, int, int*, int);
 void _putZerosToAr(int*, int);
-//void mergeSort();
+void merge(int*, int, int*, int, int*);
+int mergeSort(int*, int);
 #endif

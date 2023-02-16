@@ -7,7 +7,8 @@ int main() {
     test_SelectionSort();
     test_InsertionSort();
     test_CountingSort();
-    test_SortType();
+    test_MergeSort();
+//    test_SortType();
     test_ArInfo();
     return 0;
 }

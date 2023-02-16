@@ -122,3 +122,37 @@ void test_CountingSort() {
         showAr(&ar[0], SIZE);
     }
 }
+
+void test_MergeSort() {
+    std::cout << "---- Merge sort ----" << std::endl;
+    { /* test_1 */
+        std::cout << "----- Test №1 -----" << std::endl;
+    // -------------------------
+        const int SIZE = 10;
+        int ar[SIZE];
+        int sAr[SIZE];
+        int minElement = 1440;
+        int maxElement = 4440;
+    // -------------------------
+        randomAr(&ar[0], SIZE, minElement, maxElement);
+        showAr(&ar[0], SIZE);
+        mergeSort(&ar[0], SIZE);
+        merge(&ar[0], SIZE/2, &ar[SIZE/2], SIZE/2, &sAr[0]);
+        showAr(&ar[0], SIZE);
+    }
+    { /* test_1 */
+        std::cout << "----- Test №2 -----" << std::endl;
+    // -------------------------
+        const int SIZE = 10;
+        int ar[SIZE];
+        int sAr[SIZE];
+        int minElement = 432;
+        int maxElement = 984;
+    // -------------------------
+        randomAr(&ar[0], SIZE, minElement, maxElement);
+        showAr(&ar[0], SIZE);
+        mergeSort(&ar[0], SIZE);
+        merge(&ar[0], SIZE/2, &ar[SIZE/2], SIZE/2, &sAr[0]);
+        showAr(&ar[0], SIZE);
+    }
+}
