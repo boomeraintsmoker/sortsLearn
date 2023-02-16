@@ -1,5 +1,6 @@
 #include "test_sorts.h"
 #include "sort_type.h"
+#include "statarray.h"
 
 int main() {
     test_BubbleSort();
@@ -7,5 +8,6 @@ int main() {
     test_InsertionSort();
     test_CountingSort();
     test_SortType();
+    test_ArInfo();
     return 0;
 }

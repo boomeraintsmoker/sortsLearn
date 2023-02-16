@@ -3,4 +3,5 @@
 int getMinElement(int*, int);
 int getMaxElement(int*, int);
 int binarySearch(int*, int, int);
+void test_ArInfo();
 #endif
